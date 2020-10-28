@@ -13,15 +13,43 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Home');
+
+
+
+
+Route::get('berandaAdmin', function () {
+    return view('admin.beranda');
 });
-Route::get('/produk', function () {
-    return view('Produk');
+Route::get('berandaUser', function () {
+    return view('users.beranda');
 });
-Route::get('/login', function () {
-    return view('login');
+Route::get('produkUser', function () {
+    return view('users.produk');
 });
-Route::get('/register', function () {
-    return view('register');
+Route::get('produkAdmin', function () {
+    return view('admin.produk');
+});
+Route::get('kategoriUser', function () {
+    return view('users.kategori');
+});
+Route::get('kategoriAdmin', function () {
+    return view('admin.kategori');
+});
+Route::get('loginUser', function () {
+    return view('users.login');
+});
+Route::get('loginAdmin', function () {
+    return view('admin.login');
+});
+Route::get('registerUser', function () {
+    return view('users.register');
+});
+Route::get('registerAdmin', function () {
+    return view('admin.register');
+});
+Route::get('admin', function () {
+    return view('admin.baseAdmin');
+});
+Route::get('users', function () {
+    return view('users.baseUser');
 });
