@@ -6,7 +6,7 @@
         <h1> Selamat Datang Di tempat Penjualan Tolektro Shop</h1>
     </div>
     <!-- /.row -->
-    <div class="row">
+    <di class="row">
         <div class="col-md-3">
             <div>
                 <a href="#" class="list-group-item active">Electronics
@@ -131,75 +131,61 @@
             </div>
             <!-- /.row -->
             <div class="row">
+                @foreach($list_produk as $produkUser)
+
                 <div class="col-md-4 text-center col-sm-6 col-xs-6">
                     <div class="thumbnail product-box">
                         <img src="{{url('public')}}/assets/img/dummyimg.png" alt="" />
                         <div class="caption">
-                            <h3><a href="#">Samsung Galaxy </a></h3>
-                            <p>Price : <strong>$ 3,45,900</strong> </p>
-                            <p><a href="#">Ptional dismiss button </a></p>
-                            <p>Ptional dismiss button in tional dismiss button in </p>
-                            <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="{{url('/produk')}}" class="btn btn-primary" role="button">See Details</a></p>
+
+                            <h3><a href="#"> Samsung Galaxy </a></h3>
+                            <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="{{url('produkUser', $produkUser->id=1)}}" class="btn btn-primary" role="button">See Details</a></p>
+
                         </div>
                     </div>
                 </div>
                 <!-- /.col -->
-                <div class="col-md-4 text-center col-sm-6 col-xs-6">
-                    <div class="thumbnail product-box">
-                        <img src="{{url('public')}}/assets/img/dummyimg.png" alt="" />
-                        <div class="caption">
-                            <h3><a href="#">Samsung Galaxy </a></h3>
-                            <p>Price : <strong>$ 3,45,900</strong> </p>
-                            <p><a href="#">Ptional dismiss button </a></p>
-                            <p>Ptional dismiss button in tional dismiss button in </p>
-                            <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="{{url('/produk')}}" class="btn btn-primary" role="button">See Details</a></p>
+                <div class="row">
+                    <div class="col-md-4 text-center col-sm-6 col-xs-6">
+                        <div class="thumbnail product-box">
+                            <img src="{{url('public')}}/assets/img/xiaomi.jpg" style="height: 50%;" alt="" />
+                            <div class="caption">
+
+                                <h3><a href="#"> Xiaomi </a></h3>
+                                <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="{{url('produkUser', $produkUser->id=2)}}" class="btn btn-primary" role="button">See Details</a></p>
+
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- /.col -->
-                <div class="col-md-4 text-center col-sm-6 col-xs-6">
-                    <div class="thumbnail product-box">
-                        <img src="{{url('public')}}/assets/img/dummyimg.png" alt="" />
-                        <div class="caption">
-                            <h3><a href="#">Samsung Galaxy </a></h3>
-                            <p>Price : <strong>$ 3,45,900</strong> </p>
-                            <p><a href="#">Ptional dismiss button </a></p>
-                            <p>Ptional dismiss button in tional dismiss button in </p>
-                            <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="{{url('/produk')}}" class="btn btn-primary" role="button">See Details</a></p>
+                    <div class="row">
+                        <div class="col-md-4 text-center col-sm-6 col-xs-6">
+                            <div class="thumbnail product-box">
+                                <img src="{{url('public')}}/assets/img/realme.jpg" alt="" />
+                                <div class="caption">
+
+                                    <h3><a href="#"> Realme </a></h3>
+                                    <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="{{url('produkUser', $produkUser->id=3)}}" class="btn btn-primary" role="button">See Details</a></p>
+
+                                </div>
+                            </div>
                         </div>
+
                     </div>
-                </div>
-                <!-- /.col -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <ul class="pagination alg-right-pad">
-                    <li><a href="#">&laquo;</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&raquo;</a></li>
-                </ul>
-            </div>
-            <!-- /.row -->
-            <div>
-                <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Clothing</a></li>
-                    <li class="active">Men's Clothing</li>
-                </ol>
-            </div>
-            <!-- /.div -->
-            <div class="row">
-                <div class="btn-group alg-right-pad">
-                    <button type="button" class="btn btn-default"><strong>3005 </strong>items</button>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                            Sort Products &nbsp;
-                            <span class="caret"></span>
-                        </button>
+                    <!-- /.row -->
+                    <div class="row">
+                        <ul class="pagination alg-right-pad">
+                            <li><a href="#">&laquo;</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">&raquo;</a></li>
+                        </ul>
+                    </div>
+                    <!-- /.row -->
+                    <div class="row">
+
                         <ul class="dropdown-menu">
                             <li><a href="#">By Price Low</a></li>
                             <li class="divider"></li>
@@ -211,69 +197,13 @@
                         </ul>
                     </div>
                 </div>
+
+                <!-- /.row -->
+
             </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-md-4 text-center col-sm-6 col-xs-6">
-                    <div class="thumbnail product-box">
-                        <img src="{{url('public')}}/assets/img/dummyimg.png" alt="" />
-                        <div class="caption">
-                            <h3><a href="#">Samsung Galaxy </a></h3>
-                            <p>Price : <strong>$ 3,45,900</strong> </p>
-                            <p><a href="#">Ptional dismiss button </a></p>
-                            <p>Ptional dismiss button in tional dismiss button in </p>
-                            <p>
-                                <a href="#" class="btn btn-success" role="button">Add To Cart</a>
-                                <a href="{{url('/produk')}}" class="btn btn-primary" role="button">See Details</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.col -->
-                <div class="col-md-4 text-center col-sm-6 col-xs-6">
-                    <div class="thumbnail product-box">
-                        <img src="{{url('public')}}/assets/img/dummyimg.png" alt="" />
-                        <div class="caption">
-                            <h3><a href="#">Samsung Galaxy </a></h3>
-                            <p>Price : <strong>$ 3,45,900</strong> </p>
-                            <p><a href="#">Ptional dismiss button </a></p>
-                            <p>Ptional dismiss button in tional dismiss button in </p>
-                            <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="{{url('/produk')}}" class="btn btn-primary" role="button">See Details</a></p>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.col -->
-                <div class="col-md-4 text-center col-sm-6 col-xs-6">
-                    <div class="thumbnail product-box">
-                        <img src="{{url('public')}}/assets/img/dummyimg.png" alt="" />
-                        <div class="caption">
-                            <h3><a href="#">Samsung Galaxy </a></h3>
-                            <p>Price : <strong>$ 3,45,900</strong> </p>
-                            <p><a href="#">Ptional dismiss button </a></p>
-                            <p>Ptional dismiss button in tional dismiss button in </p>
-                            <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="{{url('/produk')}}" class="btn btn-primary" role="button">See Details</a></p>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.col -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <ul class="pagination alg-right-pad">
-                    <li><a href="#">&laquo;</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&raquo;</a></li>
-                </ul>
-            </div>
-            <!-- /.row -->
+            <!-- /.col -->
         </div>
-        <!-- /.col -->
-    </div>
-    <!-- /.row -->
+        <!-- /.row -->
 </div>
 <!-- /.container -->
 <div class="col-md-12 download-app-box text-center">
@@ -281,4 +211,5 @@
     <span class="glyphicon glyphicon-download-alt"></span>Download Our Android App and Get 10% additional Off on all Products . <a href="#" class="btn btn-danger btn-lg">DOWNLOAD NOW</a>
 
 </div>
+@endforeach
 @endsection

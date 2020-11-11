@@ -257,23 +257,23 @@
           <div class="preview col-md-6">
 
             <div class="preview-pic tab-content">
-              <div class="tab-pane active" id="pic-1"><img src="{{url('public')}}/assets/img/dummyimg.png" /></div>
-              <div class="tab-pane" id="pic-2"><img src="{{url('public')}}/assets/img/dummyimg.png" /></div>
+              <div class="tab-pane active" id="pic-1"><img src="{{url('public')}}/assets/img/xiaomi.jpg" /></div>
+              <div class="tab-pane" id="pic-2"><img src="{{url('public')}}/assets/img/realme.jpg" /></div>
               <div class="tab-pane" id="pic-3"><img src="{{url('public')}}/assets/img/dummyimg.png" /></div>
-              <div class="tab-pane" id="pic-4"><img src="{{url('public')}}/assets/img/dummyimg.png" /></div>
+              <div class="tab-pane" id="pic-4"><img src="{{url('public')}}/assets/img/realme.jpg" /></div>
               <div class="tab-pane" id="pic-5"><img src="{{url('public')}}/assets/img/dummyimg.png" /></div>
             </div>
             <ul class="preview-thumbnail nav nav-tabs">
               <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="{{url('public')}}/assets/img/dummyimg.png" /></a></li>
-              <li><a data-target="#pic-2" data-toggle="tab"><img src="{{url('public')}}/assets/img/dummyimg.png" /></a></li>
+              <li><a data-target="#pic-2" data-toggle="tab"><img src="{{url('public')}}/assets/img/realme.jpg" /></a></li>
               <li><a data-target="#pic-3" data-toggle="tab"><img src="{{url('public')}}/assets/img/dummyimg.png" /></a></li>
-              <li><a data-target="#pic-4" data-toggle="tab"><img src="{{url('public')}}/assets/img/dummyimg.png" /></a></li>
+              <li><a data-target="#pic-4" data-toggle="tab"><img src="{{url('public')}}/assets/img/realme.jpg" /></a></li>
               <li><a data-target="#pic-5" data-toggle="tab"><img src="{{url('public')}}/assets/img/dummyimg.png" /></a></li>
             </ul>
 
           </div>
           <div class="details col-md-6">
-            <h3 class="product-title">Samsung Galaxy</h3>
+            <h3 class="product-title">{{$produkUser->nama}}</h3>
             <div class="rating">
               <div class="stars">
                 <span class="fa fa-star checked"></span>
@@ -282,13 +282,18 @@
                 <span class="fa fa-star"></span>
                 <span class="fa fa-star"></span>
               </div>
-              <span class="review-no">41 reviews</span>
+              <span class="review-no">
+                <p>Berat :{{$produkUser->berat}}</p>
+              </span>
+              <span class="review-no">
+                <p>Stok :{{$produkUser->stok}}</p>
+              </span>
+
             </div>
-            <p class="product-description">adalah seri perangkat telepon pintar berbasis Android yang dirancang, diproduksi dan dipasarkan oleh Samsung Electronics. Lini produk seri galaxy ini meliputi Seri Galaxy S sebagai smartphone high-end, Seri Galaxy Note sebagai tablet dan phablet dengan fungsionalitas tambahan stylus dan Seri Galaxy Tab sebagai tablet.</p>
-            <h4 class="price">current price: <span>$ 3,45,900
+            <p class="product-description">{!!nl2br($produkUser->deskripsi)!!}</p>
+            <h4 class="price">current price: <span>{{$produkUser->harga}}
 
               </span></h4>
-            <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
 
             <h5 class="colors">colors:
               <span class="color gold not-available" data-toggle="tooltip" title="Not In store"></span>
