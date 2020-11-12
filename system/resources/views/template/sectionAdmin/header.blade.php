@@ -27,7 +27,11 @@
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
-                Riwansyah <img src="{{url('public')}}/dist/img/user1-128x128.jpg" alt="User Avatar" class=" img-circle" style="height: 100%;">
+                @if(Auth::check())
+                {{request()->user()->nama}}
+                @else
+                "silahkan login"
+                @endif <img src="{{url('public')}}/dist/img/user1-128x128.jpg" alt="User Avatar" class=" img-circle" style="height: 100%;">
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <a href="#" class="dropdown-item">
@@ -39,8 +43,11 @@
 
                 <div class="dropdown-divider"></div>
 
-                <a href="{{url('loginAdmin')}}" class="dropdown-item">
+                <a href="{{url('logout')}}" class="dropdown-item">
                     <i class="fa fa-sign"></i> Log Out
+                </a>
+                <a href="{{url('login')}}" class="dropdown-item">
+                    <i class="fa fa-envelope"></i> Login Disini
                 </a>
                 <div class="dropdown-divider"></div>
             </div>

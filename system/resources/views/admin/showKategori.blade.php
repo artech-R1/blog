@@ -5,23 +5,16 @@
         <div class="col-md-12 mt-4">
             <div class="card">
                 <div class="card-header">
-                    Detail Data Produk
+                    Detail Data Kategori
                 </div>
                 <div class="card-body">
-                    <h3>{{$produkAdmin->nama}}</h3>
+                    <h3>{{$kategoriAdmin->nama}}</h3>
                     <hr>
                     <p>
-                        Rp.{{number_format($produkAdmin->harga)}} |
-                        Stok : {{($produkAdmin->stok)}} |
-                        Berat : {{($produkAdmin->berat)}} Gr
+                        Rp.{{number_format($kategoriAdmin->hargamin)}} |
+                        Berat Bersih : {{($kategoriAdmin->beratbersih)}} Gram |
+                        Brand : {{$kategoriAdmin->brand}}
                     </p>
-                    <hr>
-                    <p>
-                        {!!nl2br($produkAdmin->deskripsi)!!}
-                    </p>
-
-
-
                 </div>
             </div>
         </div>

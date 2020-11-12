@@ -1,6 +1,7 @@
 @extends('admin.baseAdmin')
 @section('content')
-<div class="container">
+<div class="container" style="background-color: grey;">
+
     <div class="row">
         <div class="col-md-12 mt-4">
             <div class="card">
@@ -8,20 +9,13 @@
                     Detail Data Produk
                 </div>
                 <div class="card-body">
-                    <h3>{{$produkAdmin->nama}}</h3>
+                    <h3>{{$user->nama}}</h3>
                     <hr>
                     <p>
-                        Rp.{{number_format($produkAdmin->harga)}} |
-                        Stok : {{($produkAdmin->stok)}} |
-                        Berat : {{($produkAdmin->berat)}} Gr
+                        @ {{$user->username}} |
+                        Email : {{($user->email)}}
                     </p>
                     <hr>
-                    <p>
-                        {!!nl2br($produkAdmin->deskripsi)!!}
-                    </p>
-
-
-
                 </div>
             </div>
         </div>
