@@ -8,7 +8,7 @@
                     Edit Data Kategori
                 </div>
                 <div class="card-body">
-                    <form action="{{url('kategoriAdmin', $kategoriAdmin->id)}}" method="post">
+                    <form action="{{url('admin/kategoriAdmin', $kategoriAdmin->id)}}" method="post">
                         @csrf
                         @method("PUT")
                         <div class="form-group">

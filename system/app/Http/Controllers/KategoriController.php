@@ -27,7 +27,7 @@ class KategoriController extends Controller
         $Kategori->hargamin = request('hargamin');
 
         $Kategori->save();
-        return redirect('kategoriAdmin')->with('success', 'Data berhasil disimpan');
+        return redirect('admin/kategoriAdmin')->with('success', 'Data berhasil disimpan');
     }
 
     function show(Kategori $kategoriAdmin)
@@ -50,12 +50,28 @@ class KategoriController extends Controller
         $kategoriAdmin->beratbersih = request('beratbersih');
         $kategoriAdmin->hargamin = request('hargamin');
         $kategoriAdmin->save();
-        return redirect('kategoriAdmin')->with('warning', 'Data berhasil edit');;
+        return redirect('admin/kategoriAdmin')->with('warning', 'Data berhasil edit');;
     }
 
     function destroy(Kategori $kategoriAdmin)
     {
         $kategoriAdmin->delete();
-        return redirect('kategoriAdmin')->with('danger', 'Data berhasil hapus');;
+        return redirect('admin/kategoriAdmin')->with('danger', 'Data berhasil hapus');;
+    }
+    function filter()
+    {
+        $nama = request('nama');
+        $brand = explode(',', request('brand'));
+        $nama1['nama'] = $nama;
+        $brand1['brand'] = request('brand');
+        $Hargamin['harga_min'] = $harga_min = request('harga_min');
+        $Hargamax['harga_max'] = $harga_max = request('harga_max');
+        $data['list_Kategori'] = Kategori::where('nama', 'like', "%$nama%")->wherein('brand', $brand)->wherebetween('hargamin', [$harga_min, $harga_max])->get();
+        // $data['list_produk'] = Produk::wherein('brand', $brand)->get();
+        // $data['list_produk'] = Produk::wherebetween('harga', [$harga_min, $harga_max])->get();
+
+
+
+        return view('admin.kategori', $data);
     }
 }

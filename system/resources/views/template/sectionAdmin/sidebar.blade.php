@@ -41,7 +41,7 @@ if(Route::current()->uri == $route) return "active";
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{url('produkAdmin')}}" class="nav-link {{checkRouteActive('produkAdmin')}} ">
+                    <a href="{{url('admin/produkAdmin')}}" class="nav-link {{checkRouteActive('admin/produkAdmin')}} ">
                         <i class="nav-icon fas fa-home"></i>
                         <p>
                             Produk
@@ -49,7 +49,7 @@ if(Route::current()->uri == $route) return "active";
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{url('kategoriAdmin')}}" class="nav-link {{checkRouteActive('kategoriAdmin')}}">
+                    <a href="{{url('admin/kategoriAdmin')}}" class="nav-link {{checkRouteActive('admin/kategoriAdmin')}}">
                         <i class="nav-icon fas fa-home"></i>
                         <p>
                             Kategori
@@ -57,7 +57,7 @@ if(Route::current()->uri == $route) return "active";
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{url('user')}}" class="nav-link {{checkRouteActive('user')}} ">
+                    <a href="{{url('admin/user')}}" class="nav-link {{checkRouteActive('admin/user')}} ">
                         <i class="nav-icon fas fa-home"></i>
                         <p>
                             User

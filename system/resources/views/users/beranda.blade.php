@@ -8,47 +8,27 @@
     <!-- /.row -->
     <di class="row">
         <div class="col-md-3">
-            <div>
-                <a href="#" class="list-group-item active">Electronics
-                </a>
-                <ul class="list-group">
+            <div class="card">
+                <div class="card-header">
+                    Filter
+                </div>
+                <div class="card-body">
+                    <form action="{{url('produkUser/filter')}}" method="post">
+                        @csrf
+                        <div class="form-group">
+                            <label for="" class="control-label">Nama</label>
+                            <input type="text" name="nama" class="form-control" value="{{$nama ?? ''}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="control-label">Stok</label>
+                            <input type="text" name="stok" class="form-control" value="{{$stok ?? ''}}">
+                        </div>
 
-                    <li class="list-group-item">Mobile
-                        <span class="label label-primary pull-right">234</span>
-                    </li>
-                    <li class="list-group-item">Computers
-                        <span class="label label-success pull-right">34</span>
-                    </li>
-                    <li class="list-group-item">Tablets
-                        <span class="label label-danger pull-right">4</span>
-                    </li>
-                    <li class="list-group-item">Appliances
-                        <span class="label label-info pull-right">434</span>
-                    </li>
-                    <li class="list-group-item">Games & Entertainment
-                        <span class="label label-success pull-right">34</span>
-                    </li>
-                </ul>
+                        <button class="btn btn-dark float-right"><i class="fa fa-search">Filter</i></button>
+                    </form>
+                </div>
             </div>
-            <!-- /.div -->
-            <div>
-                <a href="#" class="list-group-item active list-group-item-success">Clothing & Wears
-                </a>
-                <ul class="list-group">
 
-                    <li class="list-group-item">Men's Clothing
-                        <span class="label label-danger pull-right">300</span>
-                    </li>
-                    <li class="list-group-item">Women's Clothing
-                        <span class="label label-success pull-right">340</span>
-                    </li>
-                    <li class="list-group-item">Kid's Wear
-                        <span class="label label-info pull-right">735</span>
-                    </li>
-
-                </ul>
-            </div>
-            <!-- /.div -->
             <div>
                 <a href="#" class="list-group-item active">Accessaries & Extras
                 </a>
@@ -104,8 +84,7 @@
         <div class="col-md-9">
             <div>
                 <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li class="active">Electronics</li>
+                    <li><a href="active">Home</a></li>
                 </ol>
             </div>
             <!-- /.div -->
@@ -138,72 +117,48 @@
                         <img src="{{url('public')}}/assets/img/dummyimg.png" alt="" />
                         <div class="caption">
 
-                            <h3><a href="#"> Samsung Galaxy </a></h3>
-                            <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="{{url('produkUser', $produkUser->id=1)}}" class="btn btn-primary" role="button">See Details</a></p>
+                            <h3><a href="#"> {{$produkUser->nama}} </a></h3>
+                            <h3><a href="#"> STOK |{{$produkUser->stok}} Buah </a></h3>
+                            <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="{{url('produkUser', $produkUser->id)}}" class="btn btn-primary" role="button">See Details</a></p>
 
                         </div>
                     </div>
                 </div>
+                @endforeach
                 <!-- /.col -->
+
                 <div class="row">
-                    <div class="col-md-4 text-center col-sm-6 col-xs-6">
-                        <div class="thumbnail product-box">
-                            <img src="{{url('public')}}/assets/img/xiaomi.jpg" style="height: 50%;" alt="" />
-                            <div class="caption">
-
-                                <h3><a href="#"> Xiaomi </a></h3>
-                                <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="{{url('produkUser', $produkUser->id=2)}}" class="btn btn-primary" role="button">See Details</a></p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 text-center col-sm-6 col-xs-6">
-                            <div class="thumbnail product-box">
-                                <img src="{{url('public')}}/assets/img/realme.jpg" alt="" />
-                                <div class="caption">
-
-                                    <h3><a href="#"> Realme </a></h3>
-                                    <p><a href="#" class="btn btn-success" role="button">Add To Cart</a> <a href="{{url('produkUser', $produkUser->id=3)}}" class="btn btn-primary" role="button">See Details</a></p>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- /.row -->
-                    <div class="row">
-                        <ul class="pagination alg-right-pad">
-                            <li><a href="#">&laquo;</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">&raquo;</a></li>
-                        </ul>
-                    </div>
-                    <!-- /.row -->
-                    <div class="row">
-
-                        <ul class="dropdown-menu">
-                            <li><a href="#">By Price Low</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">By Price High</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">By Popularity</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">By Reviews</a></li>
-                        </ul>
-                    </div>
+                    <ul class="pagination alg-right-pad">
+                        <li><a href="#">&laquo;</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
                 </div>
-
                 <!-- /.row -->
+                <div class="row">
 
+                    <ul class="dropdown-menu">
+                        <li><a href="#">By Price Low</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">By Price High</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">By Popularity</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">By Reviews</a></li>
+                    </ul>
+                </div>
             </div>
-            <!-- /.col -->
+
+            <!-- /.row -->
+
         </div>
-        <!-- /.row -->
+        <!-- /.col -->
+</div>
+<!-- /.row -->
 </div>
 <!-- /.container -->
 <div class="col-md-12 download-app-box text-center">
@@ -211,5 +166,5 @@
     <span class="glyphicon glyphicon-download-alt"></span>Download Our Android App and Get 10% additional Off on all Products . <a href="#" class="btn btn-danger btn-lg">DOWNLOAD NOW</a>
 
 </div>
-@endforeach
+
 @endsection
