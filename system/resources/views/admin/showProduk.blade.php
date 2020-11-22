@@ -14,6 +14,7 @@
                         Rp.{{number_format($produkAdmin->harga)}} |
                         Stok : {{($produkAdmin->stok)}} |
                         Berat : {{($produkAdmin->berat)}} Gr
+                        Seller : {{$produkAdmin->seller->nama}}
                     </p>
                     <hr>
                     <p>

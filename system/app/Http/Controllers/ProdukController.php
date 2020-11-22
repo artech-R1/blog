@@ -9,7 +9,8 @@ class ProdukController extends Controller
 
     function index()
     {
-        $data['list_produk'] = Produk::all();
+        $user = request()->user();
+        $data['list_produk'] = $user->produk;
         return view('admin.produk', $data);
     }
 
@@ -21,6 +22,7 @@ class ProdukController extends Controller
     function store()
     {
         $produk = new Produk;
+        $produk->id_user = request()->user()->id;
         $produk->nama = request('nama');
         $produk->stok = request('stok');
         $produk->harga = request('harga');

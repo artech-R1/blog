@@ -26,6 +26,10 @@
                             <label for="" class="control-label">Password</label>
                             <input type="password" class="form-control" name="password">
                         </div>
+                        <div class="form-group">
+                            <label for="" class="control-label">No Handphone</label>
+                            <input type="text" class="form-control" name="no_handphone">
+                        </div>
                         <button class="btn btn-dark float-right"><i class="fa fa-save">Simpan Data</i></button>
                     </form>
                 </div>

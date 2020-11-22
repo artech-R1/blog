@@ -288,7 +288,9 @@
               <span class="review-no">
                 <p>Stok :{{$produkUser->stok}}</p>
               </span>
-
+              <span class="review-no">
+                <p>Seller :{{$produkUser->seller->nama}}</p>
+              </span>
             </div>
             <p class="product-description">{!!nl2br($produkUser->deskripsi)!!}</p>
             <h4 class="price">current price: <span>{{$produkUser->harga}}
