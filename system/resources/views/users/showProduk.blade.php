@@ -283,7 +283,7 @@
                 <span class="fa fa-star"></span>
               </div>
               <span class="review-no">
-                <p>Berat :{{$produkUser->berat}}</p>
+                <p>Berat :{{$produkUser->berat}} Kg</p>
               </span>
               <span class="review-no">
                 <p>Stok :{{$produkUser->stok}}</p>
@@ -293,7 +293,7 @@
               </span>
             </div>
             <p class="product-description">{!!nl2br($produkUser->deskripsi)!!}</p>
-            <h4 class="price">current price: <span>{{$produkUser->harga}}
+            <h4 class="price">current price: <span>{{$produkUser->getHarga()}}
 
               </span></h4>
 

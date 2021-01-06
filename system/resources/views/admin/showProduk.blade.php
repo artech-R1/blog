@@ -11,10 +11,13 @@
                     <h3>{{$produkAdmin->nama}}</h3>
                     <hr>
                     <p>
-                        Rp.{{number_format($produkAdmin->harga)}} |
+                        {{$produkAdmin->getHarga()}} 
                         Stok : {{($produkAdmin->stok)}} |
                         Berat : {{($produkAdmin->berat)}} Gr
-                        Seller : {{$produkAdmin->seller->nama}}
+                    </p>
+                    <p>
+                        Seller : {{$produkAdmin->seller['nama']}} |
+                        diBuat : {{$produkAdmin->created_at->diffforHumans()}}
                     </p>
                     <hr>
                     <p>

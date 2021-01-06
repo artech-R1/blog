@@ -30,9 +30,9 @@ class UserProdukController extends Controller
         return redirect('produkUser')->with('success', 'Data berhasil disimpan');
     }
 
-    function show(Produk $produkUser)
+    function show($id)
     {
-        $data['produkUser'] = $produkUser;
+        $data['produkUser'] = Produk::find($id);
         return view('users.showProduk', $data);
     }
 

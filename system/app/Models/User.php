@@ -22,4 +22,19 @@ class User extends Authenticatable
     {
         return $this->hasMany(Produk::class, 'id_user');
     }
+
+    function getJk()
+    {
+        return ($this->jk == 1) ? 'Laki-Laki' : 'Perempuan';
+    }
+
+    function getPassword($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
+
+    function setUsername($value)
+    {
+        $this->attributes['username'] = strtolower($value);
+    }
 }
