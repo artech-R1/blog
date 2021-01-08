@@ -9,7 +9,7 @@ class UserProdukController extends Controller
 
     function index()
     {
-        $data['list_produk'] = Produk::all();
+        $data['list_produk'] = Produk::simplePaginate(3);
         return view('users.beranda', $data);
     }
 
@@ -22,11 +22,14 @@ class UserProdukController extends Controller
     {
         $produk = new Produk;
         $produk->nama = request('nama');
+        // $produk->img = request('img');
+        $produk->handleUpload();
         $produk->stok = request('stok');
         $produk->harga = request('harga');
         $produk->berat = request('berat');
         $produk->deskripsi = request('deskripsi');
         $produk->save();
+
         return redirect('produkUser')->with('success', 'Data berhasil disimpan');
     }
 

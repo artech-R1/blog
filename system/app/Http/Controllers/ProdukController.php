@@ -24,10 +24,13 @@ class ProdukController extends Controller
         $produk = new Produk;
         $produk->id_user = request()->user()->id;
         $produk->nama = request('nama');
+        // $produk->foto = request('foto');
         $produk->stok = request('stok');
         $produk->harga = request('harga');
         $produk->berat = request('berat');
         $produk->deskripsi = request('deskripsi');
+        
+        $produk->handleUploadFoto();
         $produk->save();
         return redirect('admin/produkAdmin')->with('success', 'Data berhasil disimpan');
     }
@@ -51,12 +54,15 @@ class ProdukController extends Controller
         $produkAdmin->harga = request('harga');
         $produkAdmin->berat = request('berat');
         $produkAdmin->deskripsi = request('deskripsi');
+        $produkAdmin->handleDeleteFoto();
+        $produkAdmin->handleUploadFoto();
         $produkAdmin->save();
         return redirect('admin/produkAdmin')->with('warning', 'Data berhasil edit');;
     }
 
     function destroy(Produk $produkAdmin)
     {
+        $produkAdmin->handleDeleteFoto();
         $produkAdmin->delete();
         return redirect('admin/produkAdmin')->with('danger', 'Data berhasil hapus');;
     }

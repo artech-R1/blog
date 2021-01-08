@@ -2,8 +2,16 @@
 
 namespace App\Models;
 
+use App\Models\Traits\Attributes\ProdukAttributes;
+use App\Models\Traits\Relations\ProdukRelations;
+
+use Illuminate\Support\Str;
+
 class Produk extends Model
-{
+{   
+
+    use ProdukRelations, ProdukAttributes; 
+
     protected $table = 'produk';
     protected $casts = [
         'created_at'=> 'datetime',
@@ -11,18 +19,5 @@ class Produk extends Model
         'berat' => 'decimal:2'
     ];
 
-    function seller()
-    {
-        return $this->belongsTo(User::class,'id_user');
-    }
     
-    function getHarga(){
-        return 'Rp. '.number_format($this->harga);
-    }
-
-    function getTanggal(){
-        $tanggal = $this->cerated_at;
-        return strftime("%d %b %Y", strtotime($tanggal));
-    }
-
 };

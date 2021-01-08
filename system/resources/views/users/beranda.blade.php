@@ -114,7 +114,7 @@
 
                 <div class="col-md-4 text-center col-sm-6 col-xs-6">
                     <div class="thumbnail product-box">
-                        <img src="{{url('public')}}/assets/img/dummyimg.png" alt="" />
+                        <img src="{{ url('public/'.$produkUser->foto.'') }}" alt="" />
                         <div class="caption">
 
                             <h3><a href="#"> {{$produkUser->nama}} </a></h3>
@@ -129,13 +129,7 @@
 
                 <div class="row">
                     <ul class="pagination alg-right-pad">
-                        <li><a href="#">&laquo;</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">&raquo;</a></li>
+                        {{ $list_produk->links() }}
                     </ul>
                 </div>
                 <!-- /.row -->

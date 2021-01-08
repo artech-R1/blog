@@ -257,18 +257,18 @@
           <div class="preview col-md-6">
 
             <div class="preview-pic tab-content">
-              <div class="tab-pane active" id="pic-1"><img src="{{url('public')}}/assets/img/xiaomi.jpg" /></div>
-              <div class="tab-pane" id="pic-2"><img src="{{url('public')}}/assets/img/realme.jpg" /></div>
-              <div class="tab-pane" id="pic-3"><img src="{{url('public')}}/assets/img/dummyimg.png" /></div>
-              <div class="tab-pane" id="pic-4"><img src="{{url('public')}}/assets/img/realme.jpg" /></div>
-              <div class="tab-pane" id="pic-5"><img src="{{url('public')}}/assets/img/dummyimg.png" /></div>
+              <div class="tab-pane active" id="pic-1"><img src="{{ url('public/'.$produkUser->foto.'') }}" /></div>
+              <div class="tab-pane" id="pic-2"><img src="{{ url('public/'.$produkUser->foto.'') }}" /></div>
+              <div class="tab-pane" id="pic-3"><img src="{{ url('public/'.$produkUser->foto.'') }}" /></div>
+              <div class="tab-pane" id="pic-4"><img src="{{ url('public/'.$produkUser->foto.'') }}" /></div>
+              <div class="tab-pane" id="pic-5"><img src="{{ url('public/'.$produkUser->foto.'') }}" /></div>
             </div>
             <ul class="preview-thumbnail nav nav-tabs">
-              <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="{{url('public')}}/assets/img/dummyimg.png" /></a></li>
-              <li><a data-target="#pic-2" data-toggle="tab"><img src="{{url('public')}}/assets/img/realme.jpg" /></a></li>
-              <li><a data-target="#pic-3" data-toggle="tab"><img src="{{url('public')}}/assets/img/dummyimg.png" /></a></li>
-              <li><a data-target="#pic-4" data-toggle="tab"><img src="{{url('public')}}/assets/img/realme.jpg" /></a></li>
-              <li><a data-target="#pic-5" data-toggle="tab"><img src="{{url('public')}}/assets/img/dummyimg.png" /></a></li>
+              <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="{{ url('public/'.$produkUser->foto.'') }} /></a></li>
+              <li><a data-target="#pic-2" data-toggle="tab"><img src="{{ url('public/'.$produkUser->foto.'') }}" /></a></li>
+              <li><a data-target="#pic-3" data-toggle="tab"><img src="{{ url('public/'.$produkUser->foto.'') }}" /></a></li>
+              <li><a data-target="#pic-4" data-toggle="tab"><img src="{{ url('public/'.$produkUser->foto.'') }}"/></a></li>
+              <li><a data-target="#pic-5" data-toggle="tab"><img src="{{ url('public/'.$produkUser->foto.'') }}" /></a></li>
             </ul>
 
           </div>
