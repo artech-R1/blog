@@ -9,7 +9,7 @@ class UserProdukController extends Controller
 
     function index()
     {
-        $data['list_produk'] = Produk::simplePaginate(3);
+        $data['list_produk'] = Produk::paginate(9);
         return view('users.beranda', $data);
     }
 
@@ -69,7 +69,7 @@ class UserProdukController extends Controller
         $stok1['stok'] = request('stok');
         $Hargamin['harga_min'] = $harga_min = request('harga_min');
         $Hargamax['harga_max'] = $harga_max = request('harga_max');
-        $data['list_produk'] = Produk::where('nama', 'like', "%$nama%")->get();
+        $data['list_produk'] = Produk::where('nama', 'like', "%$nama%")->paginate(9);
         // $data['list_produk'] = Produk::wherein('stok', $stok)->get();
         // $data['list_produk'] = Produk::wherebetween('harga', [$harga_min, $harga_max])->get();
 
