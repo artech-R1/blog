@@ -17,6 +17,10 @@
                     </p>
                     <p>
                         Seller : {{$produkAdmin->seller['nama']}} |
+                        Seller : {{$produkAdmin->provinsi}} |
+                        Seller : {{$produkAdmin->kecamatan}} |
+                        Seller : {{$produkAdmin->kabupaten}} |
+                        Seller : {{$produkAdmin->desa}} |
                         diBuat : {{$produkAdmin->created_at->diffforHumans()}}
                     </p>
                     <hr>

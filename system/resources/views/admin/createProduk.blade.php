@@ -43,8 +43,46 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="" class="control-label">Deskripsi</label>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="" class="control-label">Provinsi</label>
+                                        <select name="provinsi" class="form-control" onchange="gantiProvinsi(this.value)">
+                                           <option value="" selected>Pilih Provinsi Terlebih Dahulu</option>
+                                            @foreach ($list_provinsi as $prov)
+                                            <option value="{{ $prov->id }}">{{ $prov->nama }}</option>
+                                            @endforeach
+                                        </select>
+                                      </div>
+                                    </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="" class="control-label">Kabupaten</label>
+                                        <select name="kabupaten"  class="form-control" id="kabupaten" onchange="gantiKabupaten(this.value)" >
+                                          <option value="">Pilih Provinsi Terlebih Dahulu</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="" class="control-label">Kecamatan</label>
+                                        <select name="kecamatan" class="form-control" id="kecamatan" onchange="gantiKecamatan(this.value)">
+                                          <option value="">Pilih Kabupaten Terlebih Dahulu</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="" class="control-label">Desa</label>
+                                        <select name="desa" class="form-control" id="desa" >
+                                          <option value="">Pilih Kecamatan Terlebih Dahulu</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                            </div>  
+                       <div class="form-group">
+                                        <label for="" class="control-label">Deskripsi</label>
+                                    </div>
                             <textarea name="deskripsi" class="form-control"></textarea>
                         </div>
                         <div>                      
@@ -59,3 +97,40 @@
 </div>
 </div>
 @endsection
+@push('script')
+    <script>
+        function gantiProvinsi(id){
+            $.get("api/provinsi/"+id, function(result){
+                        result = JSON.parse(result)
+                        option = ""
+                        for(item of result){
+                            console.log(item)
+                            option += '<option value="'+item.id+'">'+item.nama+'</option>';
+                        }
+                        $("#kabupaten").html(option)
+            });
+            }
+        function gantiKabupaten(id){
+            $.get("api/kabupaten/"+id, function(result){
+                        result = JSON.parse(result)
+                        option = ""
+                        for(item of result){
+                            console.log(item);
+                            option += '<option value="'+item.id+'">'+item.nama+'</option>';
+                        }
+                        $("#kecamatan").html(option)
+            });
+            }
+        function gantiKecamatan(id){
+            $.get("api/kecamatan/"+id, function(result){
+                        result = JSON.parse(result)
+                        option = ""
+                        for(item of result){
+                            console.log(item);
+                            option += '<option value="'+item.id+'">'+item.nama+'</option>';
+                        }
+                        $("#desa").html(option)
+            });
+            }
+    </script>
+@endpush

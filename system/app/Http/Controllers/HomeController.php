@@ -1,10 +1,18 @@
 <?php 
 namespace App\Http\Controllers;
 
+use App\Models\Provinsi;
+
 class HomeController extends Controller {
 
     function showBeranda(){
         return view('admin.beranda');
+        
+    }
+    function wilayah(){
+
+        $data['list_provinsi'] = Provinsi::all();
+        return view('admin.wilayah', $data);
         
     }
     function showProduk(){
@@ -15,6 +23,8 @@ class HomeController extends Controller {
         return view('admin.kategori');
 
     }
+
+  
 }
 
 

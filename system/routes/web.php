@@ -29,3 +29,5 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('kategoriAdmin/filter', [KategoriController::class, 'filter']);
     Route::resource('user', UserController::class);
 });
+
+Route::get('test-ajax', [ProdukController::class, 'create']);

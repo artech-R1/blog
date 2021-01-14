@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produk;
+use App\Models\Provinsi;
 
 class ProdukController extends Controller
 {
@@ -16,20 +17,31 @@ class ProdukController extends Controller
 
     function create()
     {
-        return view('admin.createProduk');
+        $data['list_provinsi'] = Provinsi::all();
+        return view('admin.createProduk', $data);
+        // function testAjax()
+        // {
+        //     $data['list_provinsi'] = Provinsi::all();
+        //     return view('admin.testajax', $data);
     }
+    // }
 
     function store()
     {
+        dd(request()->all());
         $produk = new Produk;
         $produk->id_user = request()->user()->id;
         $produk->nama = request('nama');
+        $produk->provinsi = request('provinsi');
+        $produk->kabupaten = request('kabupaten');
+        $produk->kecamatan = request('kecamatan');
+        $produk->desa = request('desa');
         // $produk->foto = request('foto');
         $produk->stok = request('stok');
         $produk->harga = request('harga');
         $produk->berat = request('berat');
         $produk->deskripsi = request('deskripsi');
-        
+
         $produk->handleUploadFoto();
         $produk->save();
         return redirect('admin/produkAdmin')->with('success', 'Data berhasil disimpan');
@@ -51,6 +63,10 @@ class ProdukController extends Controller
     {
         $produkAdmin->nama = request('nama');
         $produkAdmin->stok = request('stok');
+        $produkAdmin->provinsi = request('provinsi');
+        $produkAdmin->kabupaten = request('kabupaten');
+        $produkAdmin->kecamatan = request('kecamatan');
+        $produkAdmin->desa = request('desa');
         $produkAdmin->harga = request('harga');
         $produkAdmin->berat = request('berat');
         $produkAdmin->deskripsi = request('deskripsi');

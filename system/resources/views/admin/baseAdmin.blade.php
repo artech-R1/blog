@@ -72,7 +72,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="{{url('public')}}/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
     <script src="{{url('public')}}/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
     <script src="{{url('public')}}/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-
+    @stack('script')
     <script src="{{url('public')}}/dist/js/adminlte.min.js"></script>
     <script>
         $(".table-datatable").DataTable();
