@@ -10,7 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>LOGIN</title>
+    <title>Register</title>
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{url('public')}}/plugins/fontawesome-free/css/all.min.css">
@@ -31,6 +31,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                     <div class="card-body">
                         <form action="{{url('register')}}" method="post">
+                            @csrf
                             <h3 class="text-center title-login">Registrasi</h3>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="username" placeholder="Username">
@@ -48,7 +49,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </div>
 
                             <div class="form-group">
-                                <input type="submit" name="" value="Login" class="btn btn-primary btn-block">
+                                <input type="submit" name="" class="btn btn-primary btn-block">
                             </div>
                             <div class="text-center forget">
                                 <p>Back To <a href="{{url('login')}}">Login</a></p>

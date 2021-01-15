@@ -39,6 +39,9 @@ class UserController extends Controller
 
     function show(User $user)
     {
+        
+        $userlog = request()->user();
+        if($userlog->id != $user->id) return abort(403);
         $data['user'] = $user;
         return view('user.show', $data);
     }

@@ -18,9 +18,8 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{{url('berandaUser')}}">Beranda</a></li>
                 <li><a href="{{url('kategoriUser')}}">Kategori</a></li>
-                <li><a href="{{url('produkUser')}}">Produk Unggulan</a></li>
-                <li><a href="{{url('loginUser')}}">Login</a></li>
-                <li><a href="{{url('registerUser')}}">Register</a></li>
+                <li><a href="{{url('cart')}}">My Cart</a></li>
+                <li><a href="{{url('logout')}}">Logout</a></li>
 
 
 

@@ -31,18 +31,22 @@ class AuthController extends Controller
     function logout()
     {
         Auth::logout();
-        return redirect('berandaAdmin');
+        return redirect('login');
     }
+
+   
+    
     function register()
     {
         $user = new User;
         $user->nama = request('nama');
         $user->username = request('username');
+        $user->jk = 1;
         $user->email = request('email');
         $user->password = bcrypt(request('password'));
 
         $user->save();
-        return redirect('register')->with('success', 'Registrasi Berhasil');
+        return redirect('login')->with('success', 'Registrasi Berhasil');
     }
 
     function forgotPassword()

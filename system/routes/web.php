@@ -20,6 +20,8 @@ Route::post('produkUser/filter', [UserProdukController::class, 'filter']);
 Route::get('login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('login', [AuthController::class, 'loginProcess']);
 Route::get('logout', [AuthController::class, 'logout']);
+Route::get('register', [AuthController::class, 'showRegister']);
+Route::post('register', [AuthController::class, 'register']);
 
 
 Route::prefix('admin')->middleware('auth')->group(function () {

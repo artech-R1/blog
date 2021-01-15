@@ -41,7 +41,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </div>
                             <div class="form-group custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                                <label class="custom-control-label" for="customControlAutosizing">Remember me</label>
+                                <label class="custom-control-label" for="customControlAutosizing">Remember </label>
+                              <a href="{{ url('register') }}"> <label >Register</label>
+                              </a> 
                             </div>
                             <div class="form-group">
                                 <input type="submit" name="" value="Login" class="btn btn-primary btn-block">
