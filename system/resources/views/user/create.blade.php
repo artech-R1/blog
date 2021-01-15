@@ -12,14 +12,19 @@
                         @csrf
                         <div class="form-group">
                             <label for="" class="control-label">Nama</label>
+                            @include('template.action.errors', ['item' => 'nama'])
                             <input type="text" class="form-control" name="nama">
                         </div>
                         <div class="form-group">
                             <label for="" class="control-label">Username</label>
+                            @include('template.action.errors', ['item' => 'username'])
+
                             <input type="text" class="form-control" name="username">
                         </div>
                         <div class="form-group">
                             <label for="" class="control-label">Email</label>
+                            @include('template.action.errors', ['item' => 'email'])
+
                             <input type="email" class="form-control" name="email">
                         </div>
                         <div class="form-group">

@@ -38,6 +38,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
+                        
                         @include('template.action.notif')
                     </div>
                 </div>

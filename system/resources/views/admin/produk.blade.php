@@ -39,7 +39,7 @@
             <div class="card">
                 <div class="card-header">
                     Data Produk
-                    <a href="{{url('admin/produkAdmin/create')}}" class="btn btn-dark float-right"><i class="fa fa-plus"></i>Tambah Data</a>
+                    <a href="{{url('test-ajax')}}" class="btn btn-dark float-right"><i class="fa fa-plus"></i>Tambah Data</a>
                 </div>
                 <div class="card-body">
                     <table class="table table-datatable">
